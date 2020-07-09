@@ -1,0 +1,24 @@
+let takeANumber = (katzDeli, name) => {
+  katzDeliLine.push(name);
+  return `Welcome, ${name}. You are number ${katzDeli.lengh} in line.`
+};
+let nowServing = (katzDeli) => {
+if (katzDeli.lengh === 0) {
+  return "There is nobody waiting to be served!";
+} else {
+  return `Currently serving ${katzDeli.shift()}.`
+}
+
+let currentLine = (katzDeli) => {
+let inline =[];
+if (katzDeli.lengh ===0) {
+  return 'The line in currently empty.'
+}
+for (let i = 0; i < katzDeliLine.length; i++) {
+  inline.push(`${i+1}. ${katzDeliLine[i]}`);
+}
+inline= inline.join(", "+ "");
+return `The line is currently: ` + inline
+
+
+}

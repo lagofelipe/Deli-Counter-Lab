@@ -1,0 +1,52 @@
+
+//  v  Creates a function with 2 parameters ( Current position in line ( katzDeliLine) and Customer name)
+let takeANumber = (katzDeliLine, name) => {
+  katzDeliLine.push(name);
+  return `Welcome, ${name}. You are number ${katzDeliLine.length} in line.`;
+};
+//  adds new name to the end of the array using the .push method
+//     return name and number in line using template literals
+
+//builds a function that takes 1 parameter, the current line of people
+//if current line of people is empty (length === 0, it returns there in nobody in line)
+let nowServing = (katzDeliLine) => {
+  if (katzDeliLine.length === 0) {
+    return "There is nobody waiting to be served!";
+  } else {
+    return `Currently serving ${katzDeliLine.shift()}.`;
+  }
+};
+// else, if there is a customer in line, it uses the array.shift method to return the first name in the array( index 0)
+
+//function only takes in one parameter, current people inline
+// edge case taken care using if statement, if array length if zero , there is no one in line.
+let currentLine = (katzDeliLine) => {
+  if (katzDeliLine.length === 0) {
+    return "The line is currently empty.";
+  }
+
+  // created an empty array to store interation/ loop results
+  let line = [];
+
+  /// for loop to interate thru line
+  for (var i = 0; i < katzDeliLine.length; i++) {
+    line.push(`${i + 1}. ${katzDeliLine[i]}`);
+  }
+  line = line.join(", "+ "");
+  return `The line is currently: ` + line;
+  ///returns current line
+  //uses join() method to create a new string by concatenating all of the elements in an array
+};
+
+/*
+console.log(takeANumber(katzDeliLine, "Ada")) // "Welcome, Ada. You are number 1 in line."
+console.log(takeANumber(katzDeliLine, "Grace")); // "Welcome, Grace. You are number 2 in line."
+console.log(takeANumber(katzDeliLine, "Kent")) // "Welcome, Kent. You are number 3 in line."
+console.log(currentLine(katzDeliLine)); // "The line is currently: 1. Ada, 2. Grace, 3. Kent"
+console.log(nowServing(katzDeliLine)); // "Currently serving Ada."
+console.log(currentLine(katzDeliLine)); // "The line is currently: 1. Grace, 2. Kent"
+console.log(takeANumber(katzDeliLine, "Matz")); // "Welcome, Matz. You are number 1 in line."
+console.log(currentLine(katzDeliLine)); // "The line is currently: 1. Grace, 2. Kent, 3. Matz"
+console.log(nowServing(katzDeliLine)); // "Currently serving Grace."
+console.log(currentLine(katzDeliLine)); // "The line is currently: 1. Kent, 2. Matz"
+*/
